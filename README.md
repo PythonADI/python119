@@ -3,6 +3,7 @@
 ## Assignments
 - [Assignment 1 (Workshop 1)](https://classroom.github.com/a/JfJHanOt)
 - [Assignment 2 (Workshop 2)](https://classroom.github.com/a/Q5yvY7Sr)
+- [Assignment 3 (Workshop 3)](https://classroom.github.com/a/HzndXCED)
 
 ## Topics
 [Workshop 1](./docs/workshop_1.md)
