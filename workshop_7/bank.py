@@ -6,12 +6,28 @@ Functionality:
 2. transfer (from one account to another)
 3. Deposit
 4. Withdraw
+
+
+Homework:
+1. Explain each function role!
+2. Explain each line (as explained already in comments)
+3. Add rename user functionality (suggested name of command: "rename")
+4. Add functionality to see user balance (suggested name of command: "balance")
+5. [Challenge] add user save functionality to files / also read saved user data from file
 """
 import math
 
-users = []
+users = [] # creates empty list
 
-def save_user(id_, name, initial_balance):
+def save_user(id_, name, initial_balance): # defines new function with three parameters
+    """
+    this function takes 3 arguments
+    id_: int
+    name: str
+    initial_balance: int
+
+    and it will save user dictionary in users list
+    """
     users.append({
         "id": id_,
         "name": name,
