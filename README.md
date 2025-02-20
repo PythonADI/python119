@@ -6,6 +6,7 @@
 - [Assignment 3 (Workshop 3)](https://classroom.github.com/a/HzndXCED)
 - [Assignment 4 (Workshop 4)](https://classroom.github.com/a/UH8F8LOE)
 - [Assignment 5 (Workshop 5)](https://classroom.github.com/a/pCZ6jljy)
+- [Assignment 6 (Workshop 6)](https://classroom.github.com/a/SE7UNEpI)
 
 ## Topics
 
