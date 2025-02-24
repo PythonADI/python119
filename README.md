@@ -8,6 +8,7 @@
 - [Assignment 5 (Workshop 5)](https://classroom.github.com/a/pCZ6jljy)
 - [Assignment 6 (Workshop 6)](https://classroom.github.com/a/SE7UNEpI)
 - [Assignment 7 (Workshop 7)](https://classroom.github.com/a/xUlT3AEm)
+- [Bank (Workshop 7)](./workshop_7/bank.py)
 
 ## Topics
 
@@ -79,7 +80,7 @@
 </details>
 
 <details>
-    <summary>Workshop 6 (Working with Lists)</summary>
+    <summary>Workshop 6 ()</summary>
     <br>
     <ul>
         <li>Working with lists<li>
@@ -100,11 +101,11 @@
 </details>
 
 <details>
-    <summary>Workshop 8 (Functions Intro)</summary>
+    <summary>Workshop 8 (Error Handling, Files, Function args & kwargs)</summary>
     <br>
     <ul>
-        <li>List with Dicts</li>
-        <li>Functions</li>
+        <li>try, except</li>
+        <li>*args, **kwargs</li>
         <li>Return Values</li>
     </ul>
 </details>
