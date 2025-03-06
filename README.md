@@ -161,3 +161,41 @@
 ## Resources
 - [Python Book](https://1drv.ms/b/c/8e182a6cb0324966/EWZJMrBsKhgggI5VQgEAAAABLJ8MAd28svlg3TBhDbGtJA?e=aUraJO)
 - [What is Git?](https://www.youtube.com/watch?v=HkdAHXoRtos)
+
+
+## Project managment
+
+1. Create a directory for your project
+2. Create a virtual environment
+if you are missing virtualenv, install it using
+```bash
+pip install virtualenv
+```
+
+Create a virtual environment
+```bash
+virtualenv .venv
+```
+
+3. Activate the virtual environment
+Windows
+```bash
+.venv\Scripts\activate
+```
+
+Mas / Linux
+```bash
+source .venv/bin/activate
+```
+
+4. Install the required packages
+```bash
+pip install -r requirements.txt
+```
+
+5. Initialize git
+```bash
+git init
+```
+ 
+6. Happy coding
