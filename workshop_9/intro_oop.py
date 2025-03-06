@@ -51,3 +51,4 @@ dog.name = "Barkly"
 dog.move("Living Room")
 
 print(f"{dog2.can_jump = }")
+
