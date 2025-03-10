@@ -1,13 +1,18 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=viewport, initial-scale=1.0">
-    <title>First Website</title>
-</head>
-<body>
+{% extends "base.html" %}
 
+{% block title %}
+    Home Page
+{% endblock %}
+
+{% block content %}
     <h1>Welcome to my page</h1>
-    
-</body>
-</html>
+
+
+    {% for product in products %}
+        <div>
+            <h2>{{ product.name }}</h2>
+            <p>{{ product.description }}</p>
+            <p>{{ product.price }}</p>
+        </div>
+    {% endfor %}
+{% endblock %}
