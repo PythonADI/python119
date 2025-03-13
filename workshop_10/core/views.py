@@ -14,3 +14,10 @@ def home_view(request):
 
 def about_view(request):
     return render(request, "about.html")
+
+
+def product_details_view(request, pk):
+    product = Product.objects.get(pk=pk)
+    return render(request, "product_details.html", {
+        "product": product
+    })
