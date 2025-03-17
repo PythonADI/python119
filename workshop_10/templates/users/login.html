@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% block title %}
+    Login
+{% endblock %}
+
+{% block content %}
+<div class="container">
+
+<form class="border p-3 rounded shadow bg-dark text-light" method="POST">
+    {% csrf_token %}
+    {{ form.as_p}}
+    
+    <!-- Submit button -->
+    <button type="submit" data-mdb-button-init data-mdb-ripple-init class="btn btn-primary btn-block mb-4 w-100">Sign in</button>
+  
+    <!-- Register buttons -->
+    <div class="text-center">
+      <p>Not a member? <a href="{% url 'users:register' %}">Register</a></p>
+    </div>
+  </form>
+</div>
+{% endblock %}

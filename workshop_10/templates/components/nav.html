@@ -1,6 +1,21 @@
 <nav>
+    {% if user.is_authenticated %}
     <ul>
+        Hello, {{ user.username }}
         <li><a href="/">Home</a></li>
         <li><a href="/about/">About</a></li>
+        <li>
+            <form method="POST" action="{% url 'users:logout' %}">
+                {% csrf_token %}
+                <button type="submit" class="btn btn-danger">Log out</button>
+            </form>
+        </li>
     </ul>
+    {% else %}
+    <ul>
+        <li><a href="{% url 'users:login' %}">Login</a></li>
+        <li><a href="/users/register/">Register</a></li>
+    </ul>
+
+    {% endif %}
 </nav>
