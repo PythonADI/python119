@@ -6,6 +6,9 @@
 
 {% block content %}
 <div class="container mt-5">
+    <a class="btn btn-warning" href="{% url 'core:product-update' product.pk %}">Update</a>
+    <a class="btn btn-danger" href="{% url 'core:product-delete' product.pk %}">Delete</a>
+    
     <div class="row border rounded shadow p-2">
         <!-- Product Images -->
         <div class="col-md-6 mb-4">

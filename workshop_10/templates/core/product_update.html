@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% block title %}
+    {{ product.name }}
+{% endblock %}
+
+{% block content %}
+<div class="container">
+
+    <h3>Update {{ product.name }}</h3>
+    <form enctype="multipart/form-data" class="border p-3 rounded shadow bg-dark text-light" method="POST">
+        {% csrf_token %}
+        {{ form.as_p}}
+        
+        <!-- Submit button -->
+        <button type="submit" data-mdb-button-init data-mdb-ripple-init 
+        class="btn btn-primary btn-block mb-4 w-100">Save</button>
+        <a href="{% url 'core:product-details' product.id %}" class="btn btn-outline-secondary btn-block mb-4 w-100">Cancel</a>
+    </form>
+</div>
+{% endblock %}

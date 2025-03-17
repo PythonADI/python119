@@ -18,14 +18,11 @@ from django.contrib import admin
 from django.urls import path, include
 from django.conf import settings
 from django.conf.urls.static import static
-from core.views import home_view, about_view, product_details_view
 
 
 urlpatterns = [
     path("admin/", admin.site.urls),
-    path("", home_view),
-    path("about/", about_view),
-    path("products/<int:pk>/", product_details_view),
+    path("", include("core.urls")),
     path("", include("users.urls")),
 ]
 

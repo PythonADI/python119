@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+
+{% block title %}
+    {{ product.name }}
+{% endblock %}
+
+{% block content %}
+<div class="container">
+    <form enctype="multipart/form-data" class="border p-3 rounded shadow bg-dark text-light" method="POST">
+        {% csrf_token %}
+        {{ form.as_p}}
+        <p>Are you sure you want to delete "{{ product.name }}"?</p>
+        <!-- Submit button -->
+        <button type="submit" data-mdb-button-init data-mdb-ripple-init 
+        class="btn btn-outline-danger btn-block mb-4 w-100">Delete</button>
+        <a href="{% url 'core:product-details' product.id %}" class="btn btn-primary btn-block mb-4 w-100">Cancel</a>
+    </form>
+</div>
+{% endblock %}
