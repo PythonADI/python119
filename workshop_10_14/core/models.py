@@ -21,6 +21,9 @@ class Product(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 
+    def discounted_price(self):
+        return round(self.price - (self.price * self.discount / 100), 2)
+
     def rating(self):
         reviews = self.review_set.all()
         if reviews:

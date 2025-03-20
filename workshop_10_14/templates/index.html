@@ -1,0 +1,69 @@
+{% extends "base.html" %}
+
+{% block title %}
+    Home Page
+{% endblock %}
+
+{% block content %}
+<div class="container">
+
+    <h1>Welcome to my page</h1>
+    <form class="d-flex gap-1 justify-content-center mb-3" method="GET">
+        <input class="form-control" type="text" name="search" placeholder="Search..." value="{{ request.GET.search }}"> 
+        <button class="btn btn-primary" type="submit">Search</button>
+    </form>
+    <a class="btn btn-primary" href="{% url 'core:product-create' %}">Add new Product</a>
+    <a class="btn btn-primary" href="{% url 'core:generate-random-product' %}">Generate Random Product</a>
+
+    <div class="row row-cols-2 row-cols-md-3 row-cols-lg-6 g-4 p-4">
+    {% for product in products %}
+    <div class="col">
+        <div class="card h-100 shadow-sm">
+            <a href="/products/{{ product.id }}/">
+                <img src="{{ product.thumbnail.url }}" class="card-img-top" alt="Product 4">
+            </a>
+            <div class="card-body">
+                <h5 class="card-title">{{ product.name }}</h5>
+                <p class="card-text">
+                    <span class="badge bg-primary">{{ product.created_at }}</span>
+                    {{ product.description|truncatechars:30 }}
+                </p>
+                <div class="d-flex justify-content-between align-items-center">
+                    {% if product.discount %}
+                        <div class="d-flex flex-column">
+                            <span class="text-muted text-decoration-line-through">
+                                ${{ product.price }}
+                            </span>
+                            <span class="h5 mb-0">${{ product.discounted_price }}</span>
+                            <span class="badge bg-danger">-{{ product.discount }}%</span>
+                        </div>
+                    {% else %}
+                        <span class="h5 mb-0">${{ product.price }}</span>
+                    {% endif %}
+                    <button class="btn btn-outline-primary"><i class="bi bi-cart-plus"></i> Add to Cart</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+    </div>
+
+    <div class="d-flex justify-content-center">
+        <span class="step-links">
+            {% if page_obj.has_previous %}
+                <a class="btn btn-primary"  href="?page=1&search={{ request.GET.search }}">&laquo; first</a>
+                <a class="btn btn-primary"  href="?page={{ page_obj.previous_page_number }}&search={{ request.GET.search }}">previous</a>
+            {% endif %}
+    
+            <span class="btn btn-primary disabled">
+                Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}.
+            </span>
+    
+            {% if page_obj.has_next %}
+                <a  class="btn btn-primary" href="?page={{ page_obj.next_page_number }}&search={{ request.GET.search }}">next</a>
+                <a  class="btn btn-primary" href="?page={{ page_obj.paginator.num_pages }}&search={{ request.GET.search }}">last &raquo;</a>
+            {% endif %}
+        </span>
+    </div>
+</div>
+{% endblock %}
